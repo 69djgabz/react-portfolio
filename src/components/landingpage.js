@@ -13,21 +13,13 @@ class Landing extends Component {
               alt="avatar"
             />
             <div className="banner-text">
-              <h1>Full Stack Web Developer</h1>
+              <h1>DJ & Web Developer</h1>
               <hr />
               <p>
                 HTML/CSS | Bootstrap | Javascript | React | Nodejs | Express |
                 MongoDB
               </p>
               <div className="social-links">
-                <a
-                  href="https://www.facebook.com/gabi9tornado"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fab fa-facebook-square" />
-                </a>
-
                 <a
                   href="https://github.com/69djgabz"
                   rel="noopener noreferrer"
@@ -41,6 +33,13 @@ class Landing extends Component {
                   target="_blank"
                 >
                   <i className="fab fa-youtube" />
+                </a>
+                <a
+                  href="https://djbeataholic.de/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="fas fa-globe-europe" />
                 </a>
               </div>
             </div>

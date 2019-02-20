@@ -10,11 +10,11 @@ class About extends Component {
       <div className="about-me">
         <h1>About Me</h1>
         <h4>
-          Hello, I'm Gabi and im a full stack developer , HTML/CSS, Bootstarp,
-          JavaScript, React, Nodejs, MongoDB .I'm a Dj also since 1999 ,i play
-          free style and produced some tracks and did a lot of gigs and Music
-          sets ,nowadays i live in Germany and looking forward ... So i will be
-          glad to know you or to work and learn from you when its possible .
+          Hello, I'm Gabi : Web Developer , HTML/CSS, Bootstarp, JavaScript,
+          React, Nodejs, MongoDB .I'm a Dj also since 1999 ,i play free style
+          and produced some tracks for my own and did a lot of gigs and Music
+          sets ,nowadays i'm Based in Germany and looking forward ... So i will
+          be glad to know you or to work and learn from you when its possible .
         </h4>
       </div>
     );

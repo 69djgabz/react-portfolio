@@ -10,18 +10,19 @@ class App extends Component {
     return (
       <div className="demo-big-content">
         <Layout>
-          <Header className="header-color" title="Title" scroll>
+          <Header className="header-color" title="My React-Portfolio" scroll>
             <Navigation>
               <Link to="/">Home</Link>
               <Link to="/aboutme">About Me</Link>
-              <Link to="/cv">My CV</Link>
+
               <Link to="/contact">Contact</Link>
             </Navigation>
           </Header>
-          <Drawer title="Title">
+          <Drawer title="My React-Portfolio">
             <Navigation>
+              <Link to="/">Home</Link>
               <Link to="/aboutme">AboutMe</Link>
-              <Link to="/cv">My CV</Link>
+
               <Link to="/contact">Contact</Link>
             </Navigation>
           </Drawer>
