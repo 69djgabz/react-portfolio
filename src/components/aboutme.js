@@ -12,9 +12,9 @@ class About extends Component {
         <h4>
           Hello, I'm Gabi : Web Developer , HTML/CSS, Bootstarp, JavaScript,
           React, Nodejs, MongoDB .I'm a Dj also since 1999 ,i play free style
-          and produced some tracks for my own and did a lot of gigs and Music
-          sets ,nowadays i'm Based in Germany and looking forward ... So i will
-          be glad to know you or to work and learn from you when its possible .
+          and produced some tracks for my own, and I did a lot of gigs and Music
+          sets, Nowadays i'm Based in Germany and looking forward, So i will be
+          glad to know you or to work and learn from you when its possible .
         </h4>
       </div>
     );

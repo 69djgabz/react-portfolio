@@ -1,73 +1,95 @@
 import React, { Component } from "react";
+import axios from "axios";
+
+const API_PATH = "http://djbeataholic.de/contact.php";
 
 class Contact extends Component {
-  componentDidMount() {
-    document.querySelector(".mdl-layout__content").style.backgroundImage =
-      "none";
-    document.querySelector(".mdl-layout__content").style.background =
-      "linear-gradient(to top, #fcb045, #fd1d1d, #833ab4)";
+  constructor(props) {
+    super(props);
+    this.state = {
+      fname: "",
+      lname: "",
+      email: "",
+      message: "",
+      mailSent: false,
+      error: null
+    };
   }
+
+  handleFormSubmit = e => {
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: `${API_PATH}`,
+      headers: { "content-type": "application/json" },
+      data: this.state
+    })
+      .then(result => {
+        this.setState({
+          mailSent: result.data.sent
+        });
+        console.log(this.state);
+      })
+      .catch(error => this.setState({ error: error.message }));
+  };
+
   render() {
     return (
-      <div className="contact-page">
-        <h1>Contact Page</h1>
-        <div class="container contact-form">
-          <div class="contact-image">
-            <img
-              src="https://image.ibb.co/kUagtU/rocket_contact.png"
-              alt="rocket_contact"
+      <div className="App">
+        <p>Contact Me</p>
+        <div>
+          <form action="#">
+            <label>First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+              value={this.state.fname}
+              onChange={e => this.setState({ fname: e.target.value })}
             />
-          </div>
-          <form method="post">
-            <h3>Drop Us a Message</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    name="txtName"
-                    class="form-control"
-                    placeholder="Your Name *"
-                    value=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    name="txtEmail"
-                    class="form-control"
-                    placeholder="Your Email *"
-                    value=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    name="txtPhone"
-                    class="form-control"
-                    placeholder="Your Phone Number *"
-                    value=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="submit"
-                    name="btnSubmit"
-                    class="btnContact"
-                    value="Send Message"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea
-                    name="txtMsg"
-                    class="form-control"
-                    placeholder="Your Message *"
-                    style={{ width: "100%", height: 150 }}
-                  />
-                </div>
-              </div>
+
+            <label>Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+              value={this.state.lname}
+              onChange={e => this.setState({ lname: e.target.value })}
+            />
+
+            <label>Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              value={this.state.email}
+              onChange={e => this.setState({ email: e.target.value })}
+            />
+
+            <label>Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write something.."
+              onChange={e => this.setState({ message: e.target.value })}
+              value={this.state.message}
+            />
+
+            <input
+              type="submit"
+              onClick={e => this.handleFormSubmit(e)}
+              value="Submit"
+            />
+            <div>
+              {this.state.mailSent && (
+                <div className="success">Thank you for contacting me.</div>
+              )}
+              {this.state.error && (
+                <div className="error">Sorry we had some problems.</div>
+              )}
             </div>
           </form>
         </div>
@@ -75,4 +97,5 @@ class Contact extends Component {
     );
   }
 }
+
 export default Contact;

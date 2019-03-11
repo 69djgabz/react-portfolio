@@ -13,7 +13,7 @@ class Landing extends Component {
               alt="avatar"
             />
             <div className="banner-text">
-              <h1>DJ & Web Developer</h1>
+              <h1>Web Developer</h1>
               <hr />
               <p>
                 HTML/CSS | Bootstrap | Javascript | React | Nodejs | Express |
